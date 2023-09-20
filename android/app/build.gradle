@@ -49,7 +49,6 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        multiDexEnabled true // 65,536 メソッド超過の場合に解決 https://qiita.com/tetsukick/items/25d42ce3281291e5946a
     }
 
     buildTypes {
