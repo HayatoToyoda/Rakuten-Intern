@@ -4,10 +4,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'footer.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,7 +44,6 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
-    
 
     return Scaffold(
       body: Column(
@@ -55,19 +54,20 @@ class MyHomePage extends StatelessWidget {
             onPressed: () async {
               print('button pressed!');
               await FirebaseFirestore.instance
-                .collection('test_table')
-                .doc('test_doc')
-                .set({
-                  'id': '1',
-                  'num': 4,
-                  'str': "test",
-                  'timestamp': DateTime.now().millisecondsSinceEpoch.toString(),
-                });
+                  .collection('test_table')
+                  .doc('test_doc')
+                  .set({
+                'id': '1',
+                'num': 4,
+                'str': "test",
+                'timestamp': DateTime.now().millisecondsSinceEpoch.toString(),
+              });
             },
             child: Text('Next'),
           ),
         ],
       ),
+      bottomNavigationBar: Footer(),
     );
   }
 }
