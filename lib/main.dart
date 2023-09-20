@@ -1,6 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'footer.dart';
 
 void main() {
   runApp(MyApp());
@@ -47,6 +48,7 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: Footer(),
     );
   }
 }
