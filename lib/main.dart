@@ -48,6 +48,7 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: Footer(),
     );
   }
 }
